@@ -1,24 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import AliReactTable from './ali-react-table'
+import AntdTable from './andt-table'
+
+// 由于 antd 组件的默认文案是英文，所以需要修改为中文
+import zhCN from 'antd/lib/locale/zh_CN';
+import moment from 'moment';
+import 'moment/locale/zh-cn';
+import 'antd/dist/antd.css';
+import './index.css';
+
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+moment.locale('zh-cn');
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Link to="/ali-react-table">ali-react-table</Link>
+        <span>---</span>
+        <Link to="/antd-table">antd-table</Link>
+        <Switch>
+          <Route path="/ali-react-table">
+            <AliReactTable></AliReactTable>
+          </Route>
+          <Route path="/antd-table">
+            <AntdTable></AntdTable>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
