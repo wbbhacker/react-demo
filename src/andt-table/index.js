@@ -1,7 +1,7 @@
 
 import { Table } from 'antd'
 import data from './data'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './antd.css'
 
 data.forEach((item, index) => item.key = index)
@@ -15,11 +15,8 @@ function generateColumn(dataColumns, dataSource) {
     col.title = item
     col.dataIndex = item
 
+
     col.render = (text, row, index) => {
-      if (item === '__timestamp') {
-        console.log(item)
-        console.log(a[item][index])
-      }
       return {
         children: text,
         props: {
@@ -30,7 +27,6 @@ function generateColumn(dataColumns, dataSource) {
     setColumnSorter(col, dataColumns, dataSource[0])
     columns.push(col)
   })
-  console.log(columns)
   return columns
 }
 
@@ -42,9 +38,9 @@ function setColumnSorter(obj, columnsName, dataFirst) {
   // 设置列的排序
   const cname = obj.dataIndex
   obj.sorter = {}
-  if (cname === '__timestamp') {
+  if (cname === '__timestamp' || cname === 'gender') {
     obj.sortDirections = ['ascend', 'descend', 'ascend']
-    obj.defaultSortOrder = 'descend'
+    obj.defaultSortOrder = 'ascend'
   }
   if (typeof dataFirst[cname] === 'string') {
     // 当列的内容为字符串时，按照字母顺序排序
@@ -114,16 +110,48 @@ function isTrue(arr) {
   return arr.every(item => item)
 }
 
-export default function () {
 
+function multiColumnSort(dataColumns, data) {
+  data.sort((a, b) => {
+    for (let i = 0; i < dataColumns.length; i++) {
+      const key = dataColumns[i]
+      if (a[key] !== b[key]) {
+        if (typeof a[key] === 'string') {
+          if (a[key] === null) a[key] = ''
+          if (b[key] === null) b[key] = ''
+          let x1 = a[key].toUpperCase();
+          let x2 = b[key].toUpperCase();
+          if (x1 < x2) return -1
+          if (x1 > x2) return 1
+          return 0
+        } else {
+          return a[key] - b[key]
+        }
+      }
+
+    }
+  })
+}
+console.log(multiColumnSort(columnsName, data))
+export default function () {
 
   const [columns, setColumns] = useState(() => generateColumn(columnsName, data))
 
+  useEffect(() => {
+    // console.log(columns)
+    // columns[0].sortOrder = 'descend'
+    // setColumns(columns)
+  }, [])
+
   const onChange = (pagination, filters, sorter, extra) => {
     const c = Object.keys(extra.currentDataSource[0]).filter(item => item !== 'key')
-    setColumns(generateColumn(c, extra.currentDataSource))
+    setColumns(generateColumn(columnsName, extra.currentDataSource))
   }
 
-  return <Table dataSource={data} columns={columns} pagination={false} onChange={onChange}></ Table >
+  return <Table dataSource={data}
+    columns={columns}
+    pagination={false}
+    onChange={onChange}
+  ></ Table >
 
 }
