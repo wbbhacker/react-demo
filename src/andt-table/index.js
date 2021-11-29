@@ -14,6 +14,9 @@ function generateColumn(dataColumns, dataSource) {
     const col = {}
     col.title = item
     col.dataIndex = item
+    col.onHeaderCell = function (column) {
+      console.log(column)
+    }
 
 
     col.render = (text, row, index) => {
@@ -30,17 +33,15 @@ function generateColumn(dataColumns, dataSource) {
   return columns
 }
 
-function setColumnRender() {
 
-}
 
-function setColumnSorter(obj, columnsName, dataFirst) {
+function setColumnSorter(obj, columnsName, dataFirst, indexLatitude) {
   // 设置列的排序
   const cname = obj.dataIndex
   obj.sorter = {}
   if (cname === '__timestamp' || cname === 'gender') {
     obj.sortDirections = ['ascend', 'descend', 'ascend']
-    obj.defaultSortOrder = 'ascend'
+    obj.sortOrder = 'ascend'
   }
   if (typeof dataFirst[cname] === 'string') {
     // 当列的内容为字符串时，按照字母顺序排序
@@ -131,6 +132,7 @@ function multiColumnSort(dataColumns, data) {
 
     }
   })
+  return data
 }
 console.log(multiColumnSort(columnsName, data))
 export default function () {
@@ -152,6 +154,7 @@ export default function () {
     columns={columns}
     pagination={false}
     onChange={onChange}
+
   ></ Table >
 
 }
