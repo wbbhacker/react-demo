@@ -1,4 +1,4 @@
-export default [
+export let data = [
   {
     "__timestamp": 1533859200000,
     "gender": "Male",

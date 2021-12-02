@@ -1,0 +1,24 @@
+.ant-table-summary {
+  display: table-header-group;
+  }
+ 
+  .cell_text{
+    position: relative;
+    /* background-color: #ccc; */
+    background-size:10% 10%;
+  }
+
+  .cell_text .cell_bg{
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 50%;
+    background-color: #ccc;
+    color: #ccc;
+  }
+
+  .cell_text .cell_name{
+    clear: both;
+    display: block;
+    transform: translateY(-100%);
+  }

@@ -1,9 +1,9 @@
-import dataSource from './data'
+import { dataSource } from './data'
 import { useTablePipeline, features, BaseTable } from 'ali-react-table'
 import { useState } from 'react'
 
-const dimension = ['gender']
-const metrics = ['学生贷款']
+// const dimension = ['gender']
+// const metrics = ['学生贷款']
 
 
 function generateColumn(dataColumns) {
@@ -27,6 +27,7 @@ function generateColumn(dataColumns) {
             }
           }
         }
+        break;
       default:
         break;
     }

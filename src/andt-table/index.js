@@ -1,7 +1,7 @@
 
 import { Table } from 'antd'
-import data from './data'
-import { useState, useEffect, useRef } from 'react'
+import { data } from './data'
+import { useState, useEffect } from 'react'
 import './antd.css'
 
 data.forEach((item, index) => item.key = index)
@@ -15,7 +15,7 @@ function generateColumn(dataColumns, dataSource) {
     col.title = item
     col.dataIndex = item
     col.onHeaderCell = function (column) {
-      console.log(column)
+      // console.log(column)
     }
 
 
@@ -36,7 +36,7 @@ function generateColumn(dataColumns, dataSource) {
 
 
 function setColumnSorter(obj, columnsName, dataFirst, indexLatitude) {
-  // 设置列的排序
+  // 设置列的排序个
   const cname = obj.dataIndex
   obj.sorter = {}
   if (cname === '__timestamp' || cname === 'gender') {
@@ -112,30 +112,30 @@ function isTrue(arr) {
 }
 
 
-function multiColumnSort(dataColumns, data) {
-  data.sort((a, b) => {
-    for (let i = 0; i < dataColumns.length; i++) {
-      const key = dataColumns[i]
-      if (a[key] !== b[key]) {
-        if (typeof a[key] === 'string') {
-          if (a[key] === null) a[key] = ''
-          if (b[key] === null) b[key] = ''
-          let x1 = a[key].toUpperCase();
-          let x2 = b[key].toUpperCase();
-          if (x1 < x2) return -1
-          if (x1 > x2) return 1
-          return 0
-        } else {
-          return a[key] - b[key]
-        }
-      }
+// function multiColumnSort(dataColumns, data) {
+//   data.sort((a, b) => {
+//     for (let i = 0; i < dataColumns.length; i++) {
+//       const key = dataColumns[i]
+//       if (a[key] !== b[key]) {
+//         if (typeof a[key] === 'string') {
+//           if (a[key] === null) a[key] = ''
+//           if (b[key] === null) b[key] = ''
+//           let x1 = a[key].toUpperCase();
+//           let x2 = b[key].toUpperCase();
+//           if (x1 < x2) return -1
+//           if (x1 > x2) return 1
+//           return 0
+//         } else {
+//           return a[key] - b[key]
+//         }
+//       }
 
-    }
-  })
-  return data
-}
-console.log(multiColumnSort(columnsName, data))
-export default function () {
+//     }
+//   })
+//   return data
+// }
+// console.log(multiColumnSort(columnsName, data))
+export default function AntdTable() {
 
   const [columns, setColumns] = useState(() => generateColumn(columnsName, data))
 
@@ -146,7 +146,7 @@ export default function () {
   }, [])
 
   const onChange = (pagination, filters, sorter, extra) => {
-    const c = Object.keys(extra.currentDataSource[0]).filter(item => item !== 'key')
+    // const c = Object.keys(extra.currentDataSource[0]).filter(item => item !== 'key')
     setColumns(generateColumn(columnsName, extra.currentDataSource))
   }
 

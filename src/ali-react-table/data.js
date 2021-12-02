@@ -1,4 +1,4 @@
-export default [
+export const dataSource = [
   {
     "__timestamp": 1535673600000,
     "gender": "Male",
