@@ -46,7 +46,7 @@ export default function AndtTree() {
         if (num === deepNumber) {
           let maxNum = data.other.max[deepNumber]
           return <div className="cell_text">
-            <div className='cell_bg' style={{ width: `${Number(text) / Number(maxNum[colname]) * 100}%` }}>{text}</div>
+            <div className='cell_bg' style={{ width: `${Number(text) / Number(maxNum[colname]) * 100}%` }}></div>
             <span className='cell_name' >{text}</span>
           </div>
         }
@@ -130,7 +130,7 @@ export default function AndtTree() {
             <Table.Summary.Cell>合计</Table.Summary.Cell>
             {
               data.colnames.map((column) => {
-                <Table.Summary.Cell>{data.other.total[column]}</Table.Summary.Cell>
+                return <Table.Summary.Cell>{data.other.total[column]}</Table.Summary.Cell>
               })
             }
           </Table.Summary.Row>

@@ -12,6 +12,7 @@ import 'antd/dist/antd.css';
 import './index.css';
 
 
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -19,9 +20,10 @@ import {
   Link
 } from "react-router-dom";
 
+import demo1 from './util/demo1'
+
 moment.locale('zh-cn');
-
-
+demo1()
 function App() {
   return (
     <Router>

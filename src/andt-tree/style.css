@@ -9,16 +9,13 @@
   }
 
   .cell_text .cell_bg{
-    position: relative;
-    float: left;
-    height: 100%;
-    width: 50%;
-    background-color: #ccc;
-    color: #ccc;
+    position: absolute;
+    height: 20px;
+    background-color: #D4E7F4;
   }
 
   .cell_text .cell_name{
     clear: both;
     display: block;
-    transform: translateY(-100%);
+    transform: translateZ(1px);
   }
