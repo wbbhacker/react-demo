@@ -2,6 +2,14 @@ import './App.css';
 import AliReactTable from './ali-react-table'
 import AntdTable from './andt-table'
 import AntdTree from './andt-tree'
+import 'core-js/actual'
+import 'core-js/actual/function'
+import 'core-js/actual/function/name'
+import 'core-js/actual/function/has-instance'
+import 'core-js/actual/function/bind'
+import 'core-js/actual/function/virtual/bind'
+
+
 
 
 // 由于 antd 组件的默认文案是英文，所以需要修改为中文
@@ -10,8 +18,6 @@ import moment from 'moment';
 import 'moment/locale/zh-cn';
 import 'antd/dist/antd.css';
 import './index.css';
-
-
 
 import {
   BrowserRouter as Router,
@@ -25,6 +31,16 @@ import demo1 from './util/demo1'
 moment.locale('zh-cn');
 demo1()
 function App() {
+  console.log(Function.prototype.bind)
+
+  let fn = function () {
+
+  }
+
+  let fnBind = fn.bind(null)
+
+  console.log(fnBind.prototype)
+
   return (
     <Router>
       <div className="App">
