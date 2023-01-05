@@ -2,6 +2,8 @@ import './App.css';
 import AliReactTable from './ali-react-table'
 import AntdTable from './andt-table'
 import AntdTree from './andt-tree'
+import AntvS2 from './antv-s2'
+
 import 'core-js/actual'
 import 'core-js/actual/function'
 import 'core-js/actual/function/name'
@@ -49,6 +51,8 @@ function App() {
         <Link to="/antd-table">antd-table</Link>
         <span>---</span>
         <Link to="/antd-tree">antd-tree</Link>
+        <span>---</span>
+        <Link to="/antdv-s2">antv-s2</Link>
         <Switch>
           <Route path="/ali-react-table">
             <AliReactTable></AliReactTable>
@@ -58,6 +62,9 @@ function App() {
           </Route>
           <Route path="/antd-tree">
             <AntdTree></AntdTree>
+          </Route>
+          <Route path="/antdv-s2">
+            <AntvS2></AntvS2>
           </Route>
         </Switch>
       </div>
