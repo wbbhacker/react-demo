@@ -16,30 +16,21 @@ const antvs2 = function () {
       {
         field: 'province',
         name: '省份',
-        formatter:(value)=>{
-          return value+1
-        }
-
       },
       {
         field: 'city',
         name: '城市',
-        formatter:(value)=>{
-          return value+1
-        }
       },
       {
         field: 'type',
-        name: '商品类别',
-        formatter:(value)=>{
-          return value+1
-        }
+        name: '商品类别'
       },
       {
         field: 'price',
         name: '价格',
         formatter:(value)=>{
-          return value > 10 ?  0.5 : value
+          // return parseInt(value) + 1
+          return value 
         }
       },
     ],
