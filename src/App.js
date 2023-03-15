@@ -3,6 +3,7 @@ import AliReactTable from './ali-react-table'
 import AntdTable from './andt-table'
 import AntdTree from './andt-tree'
 import AntvS2 from './antv-s2'
+import AvaDemo from './antv-ava'
 
 import 'core-js/actual'
 import 'core-js/actual/function'
@@ -10,9 +11,6 @@ import 'core-js/actual/function/name'
 import 'core-js/actual/function/has-instance'
 import 'core-js/actual/function/bind'
 import 'core-js/actual/function/virtual/bind'
-
-
-
 
 // 由于 antd 组件的默认文案是英文，所以需要修改为中文
 // import zhCN from 'antd/lib/locale/zh_CN';
@@ -53,6 +51,8 @@ function App() {
         <Link to="/antd-tree">antd-tree</Link>
         <span>---</span>
         <Link to="/antdv-s2">antv-s2</Link>
+        <span>---</span>
+        <Link to="/andv-ava">antv-ava-demo</Link>
         <Switch>
           <Route path="/ali-react-table">
             <AliReactTable></AliReactTable>
@@ -65,6 +65,9 @@ function App() {
           </Route>
           <Route path="/antdv-s2">
             <AntvS2></AntvS2>
+          </Route>
+          <Route path="/andv-ava">
+            <AvaDemo></AvaDemo>
           </Route>
         </Switch>
       </div>
