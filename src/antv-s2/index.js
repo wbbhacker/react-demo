@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import { SheetComponent } from '@antv/s2-react';
 import '@antv/s2-react/dist/style.min.css';
 import mockData from './mock-data'
-console.log(mockData)
-const antvs2 = function () { 
+const antvs2 = function () {
 
   const s2DataConfig = {
     fields: {
@@ -28,13 +27,13 @@ const antvs2 = function () {
       {
         field: 'price',
         name: '价格',
-        formatter:(value)=>{
+        formatter: (value) => {
           // return parseInt(value) + 1
-          return value 
+          return value
         }
       },
     ],
-    data:mockData,
+    data: mockData,
   };
 
   const s2Options = {
@@ -42,11 +41,11 @@ const antvs2 = function () {
     height: 480,
     showDefaultHeaderActionIcon: true, // 默认打开
   };
-  return  <SheetComponent
-  sheetType="pivot"
-  adaptive={false}
-  dataCfg={s2DataConfig}
-  options={s2Options}
-/>
+  return <SheetComponent
+    sheetType="pivot"
+    adaptive={false}
+    dataCfg={s2DataConfig}
+    options={s2Options}
+  />
 }
 export default antvs2
