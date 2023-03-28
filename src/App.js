@@ -1,18 +1,10 @@
 import React from 'react';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
-
-
-import AliReactTable from './ali-react-table'
-import AntdTable from './andt-table'
-import AntdTree from './andt-tree'
-import AntvS2 from './antv-s2'
-import AntvCkb from './antv-ava-ckb'
-import CBK from './antv-ava-ckb'
-
 import 'antd/dist/reset.css';
 import './App.css';
 import './index.css';
+import { Webgl_buffergeometry } from './components'
 
 import {
   BrowserRouter as Router,
@@ -94,7 +86,7 @@ function App() {
                 overflow: 'auto'
               }}
             >
-              <CBK></CBK>
+              <Webgl_buffergeometry></Webgl_buffergeometry>
             </Content>
           </Layout>
         </Layout>
