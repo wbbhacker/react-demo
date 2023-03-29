@@ -38,8 +38,9 @@ function App() {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
-  return (
-    <div className='content-box'>
+
+  const RenderLayout = () => {
+    return <div className='content-box'>
       <Layout className='layout-my'>
         <Header className="header">
           <div className="logo" />
@@ -92,6 +93,13 @@ function App() {
         </Layout>
       </Layout>
     </div>
+  }
+
+  const RenderOnly = () => {
+    return <Webgl_buffergeometry></Webgl_buffergeometry>
+  }
+  return (
+    <RenderOnly></RenderOnly>
   );
 }
 
