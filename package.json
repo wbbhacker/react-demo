@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@antv/ava": "^3.0.1",
     "@antv/ckb": "^2.0.4",
     "@antv/s2": "^1.40.0",
     "@antv/s2-react": "^1.35.0",

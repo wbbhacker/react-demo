@@ -5,6 +5,7 @@ import 'antd/dist/reset.css';
 import './App.css';
 import './index.css';
 import { Webgl_buffergeometry } from './components'
+import { CBK } from './components'
 
 import {
   BrowserRouter as Router,

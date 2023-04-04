@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef } from 'react';
 import draw_line from './draw_line'
+import webgbl_camera from './webgl_camera'
 
 const Webgl_buffergeometry = () => {
   const containerRef = useRef()
@@ -7,7 +8,7 @@ const Webgl_buffergeometry = () => {
   const render = useCallback(() => {
 
 
-    draw_line(containerRef.current)
+    webgbl_camera(containerRef.current)
 
   }, [])
 
