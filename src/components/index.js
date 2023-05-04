@@ -5,6 +5,7 @@ import AntvS2 from './antv-s2'
 import AntvCkb from './antv-ava-ckb'
 import CBK from './antv-ava-ckb'
 import Webgl_buffergeometry from './threejs/webgl_buffergeometry'
+import AdvisorCp from './antv-ava-advisor'
 
 export {
   AliReactTable,
@@ -14,4 +15,7 @@ export {
   AntvCkb,
   CBK,
   Webgl_buffergeometry,
+  AdvisorCp
 }
+
+

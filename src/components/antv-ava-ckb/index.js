@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { CKBJson, addChart, CKBOptions } from '@antv/ckb';
+import { addChart } from '@antv/ckb';
+// import { CKBJson, addChart, CKBOptions } from '@antv/ckb';
 import { Divider, List, Typography, Popover } from 'antd';
 import './style.css'
 
