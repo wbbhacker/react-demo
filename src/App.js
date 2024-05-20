@@ -5,7 +5,7 @@ import React from 'react';
 import 'antd/dist/reset.css';
 import './App.css';
 import './index.css';
-import { AdvisorCp } from './components'
+import { EchartLineDemo } from './components'
 
 // const { Header, Content, Sider } = Layout;
 
@@ -90,11 +90,11 @@ function App() {
   //   </div>
   // }
 
-  const RenderOnly = () => {
-    return <AdvisorCp></AdvisorCp>
-  }
+  // const RenderOnly = () => {
+  //   return <AdvisorCp></AdvisorCp>
+  // }
   return (
-    <AdvisorCp></AdvisorCp>
+    <EchartLineDemo></EchartLineDemo>
   );
 }
 

@@ -6,6 +6,7 @@ import AntvCkb from './antv-ava-ckb'
 import CBK from './antv-ava-ckb'
 import Webgl_buffergeometry from './threejs/webgl_buffergeometry'
 import AdvisorCp from './antv-ava-advisor'
+import EchartLineDemo from './echart-line-demo'
 
 export {
   AliReactTable,
@@ -15,7 +16,8 @@ export {
   AntvCkb,
   CBK,
   Webgl_buffergeometry,
-  AdvisorCp
+  AdvisorCp,
+  EchartLineDemo
 }
 
 

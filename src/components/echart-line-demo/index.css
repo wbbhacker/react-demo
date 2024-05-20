@@ -1,0 +1,9 @@
+.chart-box{
+    width: 500px;
+    height:400px;
+}
+.color-box{
+    width: 100px;
+    height: 100px;
+    background-color: aliceblue;
+}
