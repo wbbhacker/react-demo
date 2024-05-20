@@ -2,10 +2,12 @@ import React, { useEffect, useRef } from "react";
 import * as echarts from "echarts";
 import "./index.css";
 import { label } from "three/examples/jsm/nodes/Nodes.js";
-
+const TooltipEl = () => {
+  return <div>sdsd</div>;
+};
 const EchartLineDemo = () => {
   const chartRef = useRef();
-  useEffect(() => {
+  const initMarkArea = () => {
     console.log(chartRef.current);
     var chartDom = chartRef.current;
     var myChart = echarts.init(chartDom);
@@ -20,6 +22,9 @@ const EchartLineDemo = () => {
         trigger: "axis",
         axisPointer: {
           type: "cross",
+        },
+        formatter: () => {
+          return <TooltipEl></TooltipEl>;
         },
       },
       toolbox: {
@@ -190,6 +195,9 @@ const EchartLineDemo = () => {
     };
 
     option && myChart.setOption(option);
+  };
+  useEffect(() => {
+    initMarkArea();
   }, []);
 
   return (
